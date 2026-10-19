@@ -23,6 +23,7 @@ const benefits = [
   ['Guru profesional', 'Bimbingan terarah dari pengajar yang berpengalaman.'],
   ['Semi privat', 'Suasana belajar lebih fokus dengan perhatian yang personal.'],
   ['Studio nyaman', 'Ruang ber-AC yang luas, terang, dan bersih untuk berkarya.'],
+  ['Lokasi Strategis', 'Akses mudah ke mana saja, mudah dijangkau, dan Lokasi yang strategis.'],
 ];
 ---
 <html lang="id">
@@ -159,6 +160,9 @@ const benefits = [
           ✦ — — — — — — — — — — — — ✦
         </div>
       </section>
+
+
+
       <section class="classes" id="kelas">
         <div class="section-heading">
           <div>
@@ -190,74 +194,76 @@ const benefits = [
             </p>
           </div>
         </div>
-        <div class="course-grid">
-          {packages.map(([number, title, description], index) => (
-          <article class:list={["course-card", { featured: index === 0 || index === 5 || index === 6 }]}>
-            <span class="course-number">
-              {number}
-            </span>
-            <div class="course-icon" aria-hidden="true">
-              {index === 0 ? '✂' : index === 5 ? '♢' : index === 6 ? '✦' : '·'}
-            </div>
-            <h3>
-              {title}
-            </h3>
-            <p>
-              {description}
-            </p>
-            <span class="course-arrow" aria-hidden="true">
-              ↗
-            </span>
-          </article>
-          ))}
-          <article class="course-card more-card">
-            <span class="course-number">
-              +
-            </span>
-            <h3>
-              Dan masih
-              <br />
-              banyak lagi.
-            </h3>
-            <a href="https://wa.me/628121397367" target="_blank" rel="noreferrer">
-              Tanyakan kelas
-              <span>
-                →
-              </span>
-            </a>
-          </article>
-        </div>
-      </section>
+      <div class="course-showcase">
+  <div class="course-clean-list">
+    {packages.map(([number, title]) => (
+      <a
+        class="course-clean-row"
+        href="https://wa.me/628121397367"
+        target="_blank"
+        rel="noreferrer"
+      >
+        <span class="course-number">{number}</span>
+        <h3>{title}</h3>
+        <span class="course-arrow" aria-hidden="true">↗</span>
+      </a>
+    ))}
 
+    <a
+      class="course-clean-row course-clean-more"
+      href="https://wa.me/628121397367"
+      target="_blank"
+      rel="noreferrer"
+    >
+      <span class="course-number">+</span>
+      <h3>Dan masih banyak lagi.</h3>
+      <span class="course-arrow" aria-hidden="true">↗</span>
+    </a>
+  </div>
+
+  <div class="sewing-motion" aria-hidden="true">
+    <div class="sewing-hoop"></div>
+    <div class="sewing-fabric"></div>
+    <div class="sewing-thread"></div>
+    <div class="sewing-needle"></div>
+    <p>Eileen<br /><i>Course</i></p>
+  </div>
+</div>
+</section>
 
 <section class="gallery" id="gallery">
   <div class="section-heading">
     <div>
-      <p class="eyebrow">GALERI</p>
-      <h2>Galeri <i>Eileen Course</i></h2>
+      <p class="eyebrow"><span></span> Karya & suasana kelas</p>
+      <h2>Galeri <i>Eileen.</i></h2>
     </div>
-    <p>Dokumentasi kegiatan kursus dan hasil karya peserta.</p>
+
+    <p>
+      Intip proses belajar, karya murid, dan suasana di Eileen Course.
+    </p>
   </div>
 
   <div class="gallery-grid">
-    <img src="/gallery-1.jpg" alt="Galeri Eileen Course 1" loading="lazy" />
-    <img src="/gallery-2.jpg" alt="Galeri Eileen Course 2" loading="lazy" />
-    <img src="/gallery-3.jpg" alt="Galeri Eileen Course 3" loading="lazy" />
-    <img src="/gallery-4.jpg" alt="Galeri Eileen Course 4" loading="lazy" />
-    <img src="/gallery-5.jpg" alt="Galeri Eileen Course 5" loading="lazy" />
-    <img src="/gallery-6.jpg" alt="Galeri Eileen Course 6" loading="lazy" />
-    <img src="/gallery-7.jpg" alt="Galeri Eileen Course 7" loading="lazy" />
-  </div>
+  <img src="/gallery-1.jpg" alt="Kegiatan belajar menjahit di Eileen Course" />
+  <img src="/gallery-2.jpg" alt="Proses belajar menjahit di Eileen Course" />
+  <img src="/gallery-3.jpg" alt="Karya murid Eileen Course" />
+  <img src="/gallery-4.jpg" alt="Suasana kelas Eileen Course" />
+  <img src="/gallery-5.jpg" alt="Proses pembuatan busana" />
+  <img src="/gallery-6.jpg" alt="Latihan pola menjahit" />
+  <img src="/gallery-7.jpg" alt="Kegiatan kursus menjahit" />
+  <img src="/gallery-8.jpg" alt="Detail karya jahit murid" />
+  <img src="/gallery-9.jpg" alt="Kelas menjahit Eileen Course" />
+  <img src="/gallery-10.jpg" alt="Kreasi busana murid" />
+  <img src="/gallery-11.jpg" alt="Suasana kreatif di Eileen Course" />
+  <img src="/gallery-12.jpg" alt="Gaun Pesta Karya Olivia" />
+</div>  
 </section>
-
-
 
 <section class="video-section" id="video">
   <div class="video-container">
-    <p class="eyebrow">MOMEN DI EILEEN</p>
-    <h2>Keseruan Belajar Menjahit</h2>
+    <p class="eyebrow">T E S T I M O N I</p>
+    <h2>Testimoni Murid</h2>
     <p class="video-description">
-      Intip kegiatan dan kreativitas bersama
       Kursus Menjahit Eileen.
     </p>
 
@@ -909,84 +915,178 @@ nav {
   line-height:1.6;
   margin:0
 }
-.course-grid {
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  border-top:1px solid var(--line);
-  border-left:1px solid var(--line)
+.course-showcase {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(250px, 0.65fr);
+  gap: clamp(35px, 6vw, 90px);
+  align-items: stretch;
 }
-.course-card {
-  min-height:260px;
-  position:relative;
-  padding:24px 22px 20px;
-  border-right:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  background:rgba(255,255,255,.15);
-  transition:background .25s,color .25s
+
+.course-clean-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  border-top: 1px solid rgba(103, 29, 49, 0.28);
+  border-left: 1px solid rgba(103, 29, 49, 0.28);
 }
-.course-card:hover {
-  background:var(--wine);
-  color:white
+
+.course-clean-row {
+  display: grid;
+  grid-template-columns: 30px minmax(0, 1fr) 22px;
+  align-items: center;
+  gap: 12px;
+  min-height: 104px;
+  padding: 18px;
+  border-right: 1px solid rgba(103, 29, 49, 0.28);
+  border-bottom: 1px solid rgba(103, 29, 49, 0.28);
+  color: var(--wine);
+  transition: background 0.25s ease, color 0.25s ease;
 }
-.course-number {
-  font:500 10px 'DM Mono',monospace
+
+.course-clean-row:hover {
+  background: var(--wine);
+  color: #fff8ee;
 }
-.course-icon {
-  position:absolute;
-  right:21px;
-  top:18px;
-  font:34px 'Playfair Display',serif;
-  color:var(--rose)
+
+.course-clean-row .course-number {
+  color: var(--rose);
+  font: 500 10px "DM Mono", monospace;
 }
-.course-card h3 {
-  font:600 25px/1.05 'Playfair Display',serif;
-  letter-spacing:-.04em;
-  margin:85px 0 10px;
-  max-width:190px
+
+.course-clean-row h3 {
+  margin: 0;
+  font: 600 clamp(18px, 1.7vw, 25px) / 1.04 "Playfair Display", serif;
+  letter-spacing: -0.04em;
 }
-.course-card p {
-  font-size:11px;
-  line-height:1.55;
-  margin:0;
-  max-width:190px
+
+.course-clean-row .course-arrow {
+  justify-self: end;
+  font-size: 18px;
 }
-.course-arrow {
-  position:absolute;
-  right:22px;
-  bottom:20px;
-  font-size:18px
+
+.course-clean-more {
+  background: var(--ink);
+  color: #fff8ee;
 }
-.featured {
-  background:var(--wine);
-  color:white
+
+.course-clean-more .course-number {
+  color: #f2baa0;
 }
-.featured .course-icon {
-  color:#f2baa0
+
+/* Ilustrasi jahit bergerak */
+.sewing-motion {
+  position: relative;
+  min-height: 510px;
+  overflow: hidden;
+  background: #dcae82;
 }
-.featured:nth-child(6) {
-  background:#ba5267
+
+.sewing-hoop {
+  position: absolute;
+  top: 50px;
+  left: -90px;
+  width: 340px;
+  height: 340px;
+  border: 25px solid #f8e4cf;
+  border-radius: 50%;
 }
-.featured:nth-child(7) {
-  background:#d39a53
+
+.sewing-fabric {
+  position: absolute;
+  right: -100px;
+  bottom: -110px;
+  width: 350px;
+  height: 350px;
+  border: 44px solid var(--wine);
+  border-radius: 50%;
 }
-.more-card {
-  background:var(--ink);
-  color:white
+
+.sewing-thread {
+  position: absolute;
+  top: 58px;
+  left: 49%;
+  width: 2px;
+  height: 310px;
+  background: var(--wine);
+  transform: rotate(16deg);
+  transform-origin: top;
+  animation: thread-sway 3.2s ease-in-out infinite;
 }
-.more-card h3 {
-  font-size:29px;
-  margin-top:74px
+
+.sewing-thread::before {
+  position: absolute;
+  top: 112px;
+  left: -42px;
+  width: 88px;
+  height: 65px;
+  border: 2px solid var(--wine);
+  border-right: 0;
+  border-bottom: 0;
+  border-radius: 70% 0 0 0;
+  content: "";
 }
-.more-card a {
-  font-size:11px;
-  font-weight:700;
-  border-bottom:1px solid;
-  padding-bottom:4px
+
+.sewing-needle {
+  position: absolute;
+  top: 118px;
+  left: 55%;
+  width: 4px;
+  height: 180px;
+  border-radius: 10px;
+  background: #352829;
+  transform: rotate(28deg);
+  animation: needle-sew 3.2s ease-in-out infinite;
 }
-.more-card a span {
-  font-size:17px;
-  margin-left:7px
+
+.sewing-needle::before {
+  position: absolute;
+  top: -8px;
+  left: -4px;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #352829;
+  border-radius: 50%;
+  content: "";
 }
+
+.sewing-motion p {
+  position: absolute;
+  bottom: 58px;
+  left: 40px;
+  z-index: 2;
+  margin: 0;
+  color: var(--wine);
+  font: 600 clamp(46px, 4vw, 66px) / 0.82 "Playfair Display", serif;
+  letter-spacing: -0.07em;
+  transform: rotate(-8deg);
+}
+
+.sewing-motion p i {
+  font-weight: 500;
+}
+
+@keyframes needle-sew {
+  0%,
+  100% {
+    transform: translateY(0) rotate(28deg);
+  }
+
+  50% {
+    transform: translateY(42px) rotate(28deg);
+  }
+}
+
+@keyframes thread-sway {
+  0%,
+  100% {
+    transform: rotate(16deg);
+  }
+
+  50% {
+    transform: rotate(24deg);
+  }
+}
+
+
 .benefits {
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -2220,6 +2320,48 @@ nav {
   letter-spacing: 0.02em;
   text-shadow: 0 3px 12px rgba(0, 0, 0, 0.8);
   overflow-wrap: anywhere;
+}
+
+@media (max-width: 620px) {
+  .course-showcase {
+    display: block;
+  }
+
+  .course-clean-list {
+    grid-template-columns: 1fr;
+  }
+
+  .course-clean-row {
+    min-height: 76px;
+    padding: 14px;
+  }
+
+  .course-clean-row h3 {
+    font-size: 22px;
+  }
+
+  .sewing-motion {
+    min-height: 300px;
+    margin-top: 28px;
+  }
+
+  .sewing-hoop {
+    top: 20px;
+    width: 245px;
+    height: 245px;
+  }
+
+  .sewing-fabric {
+    width: 245px;
+    height: 245px;
+    border-width: 30px;
+  }
+
+  .sewing-motion p {
+    bottom: 40px;
+    left: 28px;
+    font-size: 47px;
+  }
 }
 
 </style>
